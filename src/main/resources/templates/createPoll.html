@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Yeni Anket Ekle</title>
+</head>
+<body>
+<h1>Yeni Anket Ekle</h1>
+<form th:action="@{/polls}" method="post">
+    <label>Anket Başlığı:</label>
+    <input type="text" name="title" required><br>
+
+    <h3>Soru ve Seçenekler</h3>
+    <div id="questions">
+        <div>
+            <label>Soru 1:</label>
+            <input type="text" name="questions[0].text" required><br>
+
+            <label>Seçenek 1:</label>
+            <input type="text" name="questions[0].options[0].text" required><br>
+
+            <label>Seçenek 2:</label>
+            <input type="text" name="questions[0].options[1].text" required><br>
+        </div>
+    </div>
+
+    <button type="submit">Anketi Kaydet</button>
+</form>
+
+<a th:href="@{/}">Ana Sayfaya Dön</a>
+</body>
+</html>

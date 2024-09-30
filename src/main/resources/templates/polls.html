@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Anketler</title>
+</head>
+<body>
+<h1>Anketler</h1>
+<ul>
+    <li th:each="poll : ${polls}">
+        <a th:href="@{/polls/{pollId}(pollId=${poll.id})}" th:text="${poll.title}">Anket Başlığı</a>
+    </li>
+</ul>
+<a th:href="@{/}">Ana Sayfa</a>
+</body>
+</html>

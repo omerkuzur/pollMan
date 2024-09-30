@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Anket Sonuçları</title>
+</head>
+<body>
+<h1>Anket Sonuçları</h1>
+
+<div th:each="poll : ${polls}">
+    <h3 th:text="${poll.title}">Anket Başlığı</h3>
+    <div th:each="question : ${poll.questions}">
+        <h4 th:text="${question.text}">Soru</h4>
+        <ul>
+            <li th:each="option : ${question.options}">
+                <span th:text="${option.text}">Seçenek</span> -
+                <span th:text="${option.voteCount}">0</span> oy
+            </li>
+        </ul>
+    </div>
+</div>
+
+<a th:href="@{/}">Ana Sayfaya Dön</a>
+</body>
+</html>

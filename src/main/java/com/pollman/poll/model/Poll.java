@@ -14,7 +14,7 @@ public class Poll {
 
     private String title;
 
-    @OneToMany(mappedBy = "poll", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "poll", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Question> questions;
 
     public Poll(){}

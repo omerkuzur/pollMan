@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Anket Ekle</title>
+</head>
+<body>
+<h1>Anket Ekle</h1>
+<form th:action="@{/polls}" method="post">
+    <label for="title">Anket Başlığı:</label>
+    <input type="text" id="title" name="title" required>
+
+    <h3>Sorular ve Seçenekler</h3>
+    <div id="questions">
+        <div>
+            <label for="question1">Soru 1:</label>
+            <input type="text" id="question1" name="questions[0].text" required>
+
+            <label for="option1">Seçenek 1:</label>
+            <input type="text" id="option1" name="questions[0].options[0].text" required>
+
+            <label for="option2">Seçenek 2:</label>
+            <input type="text" id="option2" name="questions[0].options[1].text" required>
+        </div>
+    </div>
+
+    <button type="submit">Anketi Kaydet</button>
+</form>
+</body>
+</html>

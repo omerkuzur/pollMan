@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Oy Ver</title>
+</head>
+<body>
+<h1 th:text="${poll.title}">Oy Ver</h1>
+
+<!-- Form: Oy Verme İşlemi -->
+<form th:action="@{/polls/{pollId}/vote(pollId=${poll.id})}" method="post">
+    <!-- Soruları Listeler -->
+    <div th:each="question : ${poll.questions}">
+        <h4 th:text="${question.text}">Soru</h4>
+        <!-- Şıkları Listeler -->
+        <div th:each="option : ${question.options}">
+            <input type="radio" th:name="'question_' + ${question.id}" th:value="${option.id}" required>
+            <span th:text="${option.text}">Seçenek</span>
+        </div>
+    </div>
+    <button type="submit">Oy Ver</button>
+</form>
+
+<a th:href="@{/}">Ana Sayfaya Dön</a>
+</body>
+</html>

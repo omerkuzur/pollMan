@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Oy Ver</title>
+</head>
+<body>
+<h1 th:text="${poll.title}">Anket Başlığı</h1>
+
+<form th:action="@{/polls/{pollId}/vote(pollId=${poll.id})}" method="post">
+    <div th:each="question : ${poll.questions}">
+        <h3 th:text="${question.text}">Soru</h3>
+        <div th:each="option : ${question.options}">
+            <label>
+                <input type="radio" th:name="'question_' + ${question.id}" th:value="${option.id}" required>
+                <span th:text="${option.text}">Seçenek</span>
+            </label>
+        </div>
+    </div>
+    <button type="submit">Oy Ver</button>
+</form>
+
+<a th:href="@{/polls}">Anketlere Dön</a>
+</body>
+</html>
