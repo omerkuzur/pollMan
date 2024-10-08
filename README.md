@@ -23,7 +23,7 @@ PollMan is a simple Poll Management System that allows users to create polls, vo
 ### Clone the Repository
 To get started with the project, clone the repository to your local machine:
 
-```bash
+```
 git clone https://github.com/omerkuzur/PollMan.git
 cd PollMan 
 ```
@@ -31,21 +31,21 @@ cd PollMan
 ### Build the Project
 Navigate to the project directory and build the project using Maven:
 
-```bash
+```
 mvn clean install
 ```
 
 ### Run the Application
 You can run the Spring Boot application using the following command:
 
-```bash
+```
 mvn spring-boot:run
 ```
 
 ### Access the Application
 Open your web browser and go to:
 
-```bash
+```
 http://localhost:8080
 ```
 
